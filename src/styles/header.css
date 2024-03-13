@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+}
+.header .logo__header {
+  width: 210px;
+  height: auto;
+}
+.header .nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 57px;
+}
+.header li {
+  list-style-type: none;
+}
+.header .nav__link {
+  /* Ajoutez ici les styles spécifiques à vos liens de menu */
+}
+
+/*# sourceMappingURL=Header.css.map */

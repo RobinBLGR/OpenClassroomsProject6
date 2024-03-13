@@ -1,0 +1,14 @@
+.banner img {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1240px;
+  height: 223px;
+  object-fit: cover;
+  margin-top: 50px;
+  border-radius: 25px;
+  filter: brightness(60%);
+}
+
+/*# sourceMappingURL=Banner.css.map */

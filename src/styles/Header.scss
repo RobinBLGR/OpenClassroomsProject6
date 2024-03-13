@@ -1,0 +1,29 @@
+@import 'mixins';
+
+.header {
+  @include flex-center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+
+  .logo__header {
+    width: 210px;
+    height: auto;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 57px;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .nav__link {
+    /* Ajoutez ici les styles spécifiques à vos liens de menu */
+  }
+}
