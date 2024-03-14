@@ -9,10 +9,13 @@
 }
 
 .cards {
+  background-color: #f6f6f6;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 60px;
+  gap: 50px;
+  border-radius: 25px;
+  padding: 50px;
 }
 
 /*# sourceMappingURL=Home.css.map */

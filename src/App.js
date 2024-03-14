@@ -1,5 +1,6 @@
+import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -8,9 +9,9 @@ import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
-      
+   
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -18,7 +19,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
