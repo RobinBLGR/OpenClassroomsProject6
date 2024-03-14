@@ -24,6 +24,7 @@
   }
 
   .nav__link {
-    /* Ajoutez ici les styles spécifiques à vos liens de menu */
+    @include main-police;
+    font-size: 24px;
   }
 }

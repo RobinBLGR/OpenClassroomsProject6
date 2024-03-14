@@ -1,3 +1,9 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 .logo__footer {
   width: 1440px;
   height: auto;

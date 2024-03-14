@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .header {
   display: flex;
   align-items: center;
@@ -21,7 +20,11 @@
   list-style-type: none;
 }
 .header .nav__link {
-  /* Ajoutez ici les styles spécifiques à vos liens de menu */
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=Header.css.map */
