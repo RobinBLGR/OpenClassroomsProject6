@@ -1,9 +1,14 @@
-@import 'mixins';  
+@import 'mixins';   
 
   .card {
     width: 340px;
     height: 340px;
     position: relative;
+
+    @media (max-width: 768px) {
+      width: 335px;
+      height: 255px;
+      }
   }
   
   .card img {

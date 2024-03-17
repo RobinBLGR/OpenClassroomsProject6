@@ -1,12 +1,33 @@
 @import 'mixins'; 
 
 .footer {
-  display: flex;
+  @include flex-center;
+  flex-direction: column;
   justify-content: center;
+  max-width: 1440px;
+  height: 209px;
   margin-top: 50px;
+  background-color: black;
+
+  @media (max-width: 768px) {
+    max-width: 375px;
+    margin-top: 22px;
+    }
 }
 
 .logo__footer {
-  width: 1440px;
-  height: auto;
+  width: 122px;
+  max-height: 39px;
+}
+
+.footer p {
+  text-align: center;
+  @include main-police;
+  font-size: 24px;
+  color: white;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    max-width: 100px;
+    }
 }

@@ -3,7 +3,8 @@
 $main-color: #FF6060;
 
 .error {
-    text-align: center;
+    @include flex-center;
+    flex-direction: column;
 }
 
 h2 {
@@ -11,17 +12,34 @@ h2 {
     color: $main-color;
     font-size: 288px;
     height: 150px;
+
+    @media (max-width: 768px) {
+        font-size: 96px;
+        }
 }
 
 p {
     @include main-police;
     color: $main-color;
     font-size: 36px;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+        font-weight: 500;
+        width: 260px;
+        text-align: center;
+        }
 }
 
 .retour {
     margin-top: 150px;
     margin-bottom: 150px;
+
+    @media (max-width: 768px) {
+        margin-top: 100px;
+        margin-bottom: 100px;
+            }
+
 }
 
 .back__link {
@@ -30,4 +48,8 @@ p {
     text-decoration: underline;
     font-size: 18px;
     font-weight: 500;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+        }
 }

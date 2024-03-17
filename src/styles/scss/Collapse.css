@@ -6,12 +6,22 @@
   margin-top: 40px;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  .collapse__container {
+    margin-top: 19px;
+  }
+}
 
 .collapse {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 70%;
+}
+@media (max-width: 768px) {
+  .collapse {
+    width: 335px;
+  }
 }
 
 .collapse__title {
@@ -33,6 +43,14 @@
   cursor: pointer;
   border-radius: 5px;
 }
+@media (max-width: 768px) {
+  .collapse__title {
+    height: 30px;
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 .collapse__content {
   font-family: "Montserrat", sans-serif;
@@ -45,9 +63,20 @@
   font-size: 18px;
   padding: 20px;
 }
+@media (max-width: 768px) {
+  .collapse__content {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
 
 .collapse__arrow {
   font-size: 30px;
+}
+@media (max-width: 768px) {
+  .collapse__arrow {
+    font-size: 20px;
+  }
 }
 
 .collapse__icon {

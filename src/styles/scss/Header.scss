@@ -8,15 +8,27 @@
   margin-right: auto;
   margin-top: 45px;
 
+  @media (max-width: 768px) {
+    max-width: 335px;
+    }
+
   .logo__header {
     width: 210px;
     height: auto;
+
+    @media (max-width: 768px) {
+      width: 145px;
+      }
   }
 
   .nav {
     display: flex;
     justify-content: flex-end;
     gap: 57px;
+
+    @media (max-width: 768px) {
+      gap: 30px;
+      }
   }
 
   li {
@@ -26,5 +38,9 @@
   .nav__link {
     @include main-police;
     font-size: 24px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      }
   }
 }

@@ -4,10 +4,16 @@
     width: 1240px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 43px;
     text-align: center;
     margin-left: auto;
-    margin-right: auto;  
+    margin-right: auto; 
+    
+    @media (max-width: 768px) {
+        width: 375px;
+        gap: 22px;
+        }
 }
 
 .cards {
@@ -18,4 +24,13 @@
     gap: 50px;
     border-radius: 25px;
     padding: 50px;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        background-color: white;
+        width: 335px;
+        padding: 0;
+        gap: 20px;
+        }
   }

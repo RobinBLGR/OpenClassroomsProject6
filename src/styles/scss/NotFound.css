@@ -1,5 +1,7 @@
 .error {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 h2 {
@@ -11,6 +13,11 @@ h2 {
   font-size: 288px;
   height: 150px;
 }
+@media (max-width: 768px) {
+  h2 {
+    font-size: 96px;
+  }
+}
 
 p {
   font-family: "Montserrat", sans-serif;
@@ -20,10 +27,24 @@ p {
   color: #FF6060;
   font-size: 36px;
 }
+@media (max-width: 768px) {
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    width: 260px;
+    text-align: center;
+  }
+}
 
 .retour {
   margin-top: 150px;
   margin-bottom: 150px;
+}
+@media (max-width: 768px) {
+  .retour {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
 }
 
 .back__link {
@@ -35,6 +56,11 @@ p {
   text-decoration: underline;
   font-size: 18px;
   font-weight: 500;
+}
+@media (max-width: 768px) {
+  .back__link {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=NotFound.css.map */

@@ -1,17 +1,25 @@
-@import 'mixins';
+@import 'mixins'; 
 
 .banner {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .banner img {
     @include flex-center;
-    width: 100%;
+    width: 1240px;
     height: 223px;
     object-fit: cover;
     margin-top: 50px;
     border-radius: 25px;
     filter: brightness(60%);
+
+    @media (max-width: 768px) {
+        max-height: 111px;
+        max-width: 335px;
+        margin-top: 27px;
+        }
 }
 .texte__banner {
     position: absolute;
@@ -24,5 +32,13 @@
     font-weight: bold;
     color: #fff;
     text-align: center;
-    text-shadow: 2px 2px 4px #000
+    text-shadow: 2px 2px 4px #000;
+
+    @media (max-width: 768px) {
+        top: 80%;
+        left: 40%;
+        font-size: 24px;
+        width: 70%;
+        text-align: left;
+        }
 }

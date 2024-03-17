@@ -3,6 +3,12 @@
   height: 340px;
   position: relative;
 }
+@media (max-width: 768px) {
+  .card {
+    width: 335px;
+    height: 255px;
+  }
+}
 
 .card img {
   width: 100%;
