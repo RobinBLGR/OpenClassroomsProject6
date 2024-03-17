@@ -1,13 +1,17 @@
 import React from 'react';
-import '../styles/scss/Card.css'; 
+import '../styles/scss/Card.css';
 
-function Card({ id, title, cover }) {
+const Card = ({ id, title, cover, handleClickLogement }) => {
+  const handleClick = () => {
+    handleClickLogement(id);
+  };
+
   return (
-    <div className='card'>
+    <div className='card' onClick={handleClick}>
       <img src={cover} alt={title} />
       <h3>{title}</h3>
     </div>
   );
-}
+};
 
-  export default Card;
+export default Card;

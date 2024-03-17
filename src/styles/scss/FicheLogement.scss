@@ -1,0 +1,44 @@
+@import 'mixins';
+
+$main-color: #FF6060;
+
+.fiche__detaillee {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.titre__location {
+    flex-direction: column;
+    text-align: left;
+}
+
+.titre__location h2 {
+    font-size: 36px;
+    font-weight: 400;
+    height: 51px;
+    margin: 0;
+}
+
+.fiche__detaillee p {
+    @include main-police;
+    font-size: 18px;
+    margin: 0;
+}
+
+.host__name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.host__name p {
+    color: $main-color;
+    text-align: right;
+    width: 50%;
+}
+
+.host__name img {
+    height: 64px;
+    width: 64px;
+}
