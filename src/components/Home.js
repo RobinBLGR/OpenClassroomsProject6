@@ -1,13 +1,15 @@
 import React from 'react';
-import '../styles/Home.css';
+import '../styles/scss/style.css'
+import '../styles/scss/Home.css';
 import Banner from './Banner';
+import bannerHome from '../assets/banner-home.png'
 import Card from './Card';
 import logementsData from '../datas/logements.json'
 
 function Home() {
   return (
     <div className='banner__cards'>
-      <Banner />
+      <Banner imageSRC={bannerHome} text="Chez vous, partout et ailleurs"/>
     
       <div className='cards'>
       {logementsData.map((logement) => (

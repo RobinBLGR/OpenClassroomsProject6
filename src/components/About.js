@@ -1,10 +1,22 @@
 import React from 'react';
+import '../styles/scss/Collapse.css';
+import '../styles/scss/style.css'
+import Banner from './Banner';
+import bannerAbout from '../assets/banner-about.png';
+import Collapse from './Collapse'; 
+import aboutList from '../datas/aboutList.json';
 
 function About() {
   return (
     <div>
-      <h2>About</h2>
-      <p>This is the about page.</p>
+      <div className='banner__cards'>
+        <Banner imageSRC={bannerAbout} />
+      </div>
+      <div className='collapse__container'>
+        {aboutList.map((item, index) => (
+          <Collapse key={index} title={item.title} content={item.content} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,61 @@
+.collapse__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.collapse {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+}
+
+.collapse__title {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 52px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background-color: #FF6060;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.collapse__content {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  background-color: #FBFBFB;
+  width: 100%;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.collapse__arrow {
+  font-size: 30px;
+}
+
+.collapse__icon {
+  transition: transform 0.3s ease;
+}
+
+.collapse__icon.rotate {
+  transform: rotate(-180deg);
+}
+
+/*# sourceMappingURL=Collapse.css.map */

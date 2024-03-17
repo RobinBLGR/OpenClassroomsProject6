@@ -12,7 +12,7 @@
   background-color: #f6f6f6;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   gap: 50px;
   border-radius: 25px;
   padding: 50px;

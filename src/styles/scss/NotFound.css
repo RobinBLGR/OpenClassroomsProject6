@@ -1,0 +1,40 @@
+.error {
+  text-align: center;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  color: #FF6060;
+  font-size: 288px;
+  height: 150px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  color: #FF6060;
+  font-size: 36px;
+}
+
+.retour {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.back__link {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  color: black;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=NotFound.css.map */

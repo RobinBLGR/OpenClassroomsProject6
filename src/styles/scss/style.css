@@ -2,5 +2,10 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 }
+@media (max-width: 768px) {
+  body {
+    max-width: 375px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

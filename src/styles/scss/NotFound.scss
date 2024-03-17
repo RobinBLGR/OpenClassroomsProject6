@@ -1,0 +1,33 @@
+@import 'mixins';
+
+$main-color: #FF6060;
+
+.error {
+    text-align: center;
+}
+
+h2 {
+    @include main-police;
+    color: $main-color;
+    font-size: 288px;
+    height: 150px;
+}
+
+p {
+    @include main-police;
+    color: $main-color;
+    font-size: 36px;
+}
+
+.retour {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.back__link {
+    @include main-police;
+    color: black;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 500;
+}
