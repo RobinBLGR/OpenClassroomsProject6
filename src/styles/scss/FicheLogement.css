@@ -55,6 +55,7 @@
 .host__name img {
   height: 64px;
   width: 64px;
+  border-radius: 50px;
 }
 
 .tags__rating {
@@ -90,6 +91,25 @@
 .star {
   margin-right: 10px;
   font-size: 24px;
+}
+
+.description__equipements {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-top: 10px;
+}
+.description__equipements .collapse__title {
+  font-size: 18px;
+  padding-left: 10px;
+}
+.description__equipements .collapse__content {
+  text-align: left;
+}
+
+.equipments__list {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=FicheLogement.css.map */

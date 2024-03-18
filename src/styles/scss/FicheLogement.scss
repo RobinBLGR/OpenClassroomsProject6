@@ -57,6 +57,7 @@ $main-color: #FF6060;
 .host__name img {
     height: 64px;
     width: 64px;
+    border-radius: 50px;
 }
 
 .tags__rating {
@@ -92,4 +93,24 @@ $main-color: #FF6060;
   .star {
     margin-right: 10px;
     font-size: 24px;
+  }
+
+.description__equipements {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 10px;
+
+    .collapse__title {
+        font-size: 18px;
+        padding-left: 10px;
+    } 
+
+    .collapse__content {
+        text-align: left;
+    }
+}
+.equipments__list {
+    display: flex;
+    flex-direction: column;
   }

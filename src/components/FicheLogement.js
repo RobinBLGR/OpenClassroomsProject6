@@ -1,11 +1,11 @@
 import React from 'react';
-import '../styles/scss/FicheLogement.css'
-import host from '../assets/host.png';
+import '../styles/scss/FicheLogement.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Collapse from './Collapse';
 
 function FicheLogement({ logement }) {
-  const { tags } = logement;
+  const { tags, description, equipments } = logement;
 
   const roundedRating = Math.round(logement.rating);
   const stars = [...Array(5)].map((_, index) => {
@@ -23,7 +23,7 @@ function FicheLogement({ logement }) {
           </div>
           <div className='host__name'>
             <p>{logement.host.name}</p>
-            <img src={host} alt="Nom de l'hôte" className='host__logo' />
+            <img src={logement.host.picture} alt="Imag de l'hôte" />
           </div>
         </div>
         <div className='tags__rating'>
@@ -32,10 +32,14 @@ function FicheLogement({ logement }) {
             <button key={index}>{tag}</button>
             ))}
           </div> 
-          <div> {stars}</div>
+          <div>{stars}</div>
+        </div>
+        <div className='description__equipements'>
+          <Collapse title='Description' content={description} />
+          <Collapse title='Equipements' content={equipments} />  
         </div>
     </div>
   );
-};
+}
 
 export default FicheLogement;
