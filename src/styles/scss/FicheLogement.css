@@ -1,7 +1,21 @@
 .fiche__detaillee {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
+  margin-top: 50px;
+  gap: 20px;
+}
+.fiche__detaillee img {
+  width: 1240px;
+  height: 415px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.titre__host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .titre__location {
@@ -11,7 +25,7 @@
 
 .titre__location h2 {
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 500;
   height: 51px;
   margin: 0;
 }
@@ -28,6 +42,7 @@
 .host__name {
   display: flex;
   align-items: center;
+  justify-content: end;
   gap: 10px;
 }
 
@@ -40,6 +55,41 @@
 .host__name img {
   height: 64px;
   width: 64px;
+}
+
+.tags__rating {
+  display: flex;
+  justify-content: space-between;
+}
+.tags__rating .tags {
+  display: flex;
+  gap: 10px;
+}
+.tags__rating .tags button {
+  background-color: #FF6060;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  border-radius: 20px;
+  min-width: 115px;
+  padding: 5px 15px 5px 15px;
+  border: none;
+  font-weight: 700;
+  color: white;
+}
+
+.star-filled {
+  color: #FF6060;
+}
+
+.star-empty {
+  color: lightgray;
+}
+
+.star {
+  margin-right: 10px;
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=FicheLogement.css.map */

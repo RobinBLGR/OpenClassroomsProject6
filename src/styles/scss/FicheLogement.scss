@@ -4,8 +4,23 @@ $main-color: #FF6060;
 
 .fiche__detaillee {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
+    margin-top: 50px;
+    gap: 20px;
+
+    img {
+        width: 1240px; 
+        height: 415px;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+}
+
+.titre__host {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .titre__location {
@@ -15,7 +30,7 @@ $main-color: #FF6060;
 
 .titre__location h2 {
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 500;
     height: 51px;
     margin: 0;
 }
@@ -29,6 +44,7 @@ $main-color: #FF6060;
 .host__name {
     display: flex;
     align-items: center;
+    justify-content: end;
     gap: 10px;
 }
 
@@ -42,3 +58,38 @@ $main-color: #FF6060;
     height: 64px;
     width: 64px;
 }
+
+.tags__rating {
+    display: flex;
+    justify-content: space-between;
+
+    .tags {
+        display: flex;
+        gap: 10px;
+
+        button {
+            background-color: $main-color;
+            @include main-police;
+            border-radius: 20px;
+            min-width: 115px;
+            padding: 5px 15px 5px 15px;
+            border: none;
+            font-weight: 700;
+            color: white;
+        }
+    }
+}
+
+// Gestion de la notation par étoiles
+.star-filled {
+    color: $main-color;
+  }
+  
+  .star-empty {
+    color: lightgray;
+  }
+
+  .star {
+    margin-right: 10px;
+    font-size: 24px;
+  }
