@@ -14,6 +14,12 @@ $main-color: #FF6060;
         height: 415px;
         object-fit: cover;
         border-radius: 25px;
+
+        @media (max-width: 768px) {
+            max-width: 335px;
+            max-height: 255px;
+            margin: auto;
+            }
     }
 }
 
@@ -33,6 +39,10 @@ $main-color: #FF6060;
     font-weight: 500;
     height: 51px;
     margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+        }
 }
 
 .fiche__detaillee p {
@@ -77,9 +87,39 @@ $main-color: #FF6060;
             border: none;
             font-weight: 700;
             color: white;
+
+            @media (max-width: 768px) {
+                max-width: 84px;
+                max-height: 18px;
+                padding: 2px 2px 2px 7px;
+                }
         }
     }
 }
+
+.description__equipements {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 10px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        }
+
+    .collapse__title {
+        font-size: 18px;
+        padding-left: 10px;
+    } 
+
+    .collapse__content {
+        text-align: left;
+    }
+}
+.equipments__list {
+    display: flex;
+    flex-direction: column;
+  }
 
 // Gestion de la notation par étoiles
 .star-filled {
@@ -95,22 +135,4 @@ $main-color: #FF6060;
     font-size: 24px;
   }
 
-.description__equipements {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    margin-top: 10px;
 
-    .collapse__title {
-        font-size: 18px;
-        padding-left: 10px;
-    } 
-
-    .collapse__content {
-        text-align: left;
-    }
-}
-.equipments__list {
-    display: flex;
-    flex-direction: column;
-  }
