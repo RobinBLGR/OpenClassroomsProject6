@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/scss/style.css';
 import '../styles/scss/Home.css';
 import Banner from './Banner';
@@ -9,6 +9,11 @@ import FicheLogement from './FicheLogement';
 
 function Home() {
   const [logementSelectionne, setLogementSelectionne] = useState(null);
+  const [logements, setLogements] = useState([]);
+
+  useEffect(() => {
+    setLogements(logementsData);
+  }, []);
 
   const handleClickLogement = (logementId) => {
     const logement = logementsData.find((logement) => logement.id === logementId);
@@ -25,7 +30,7 @@ function Home() {
         <>
           <Banner imageSRC={bannerHome} text="Chez vous, partout et ailleurs" />
           <div className='cards'>
-            {logementsData.map((logement) => (
+            {logements.map((logement) => (
               <Card
                 key={logement.id}
                 id={logement.id}

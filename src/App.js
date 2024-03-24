@@ -24,5 +24,5 @@ function App() {
     </BrowserRouter>
   );
 }
-// FicheLogement le lien ne fonctionne pas, doit permettre depuis fiche d'aller sur page accueil
+
 export default App;

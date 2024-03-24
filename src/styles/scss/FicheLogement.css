@@ -4,6 +4,12 @@
   width: 100%;
   margin-top: 50px;
   gap: 20px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .fiche__detaillee {
+    margin-top: 30px;
+  }
 }
 .fiche__detaillee img {
   width: 1240px;
@@ -24,20 +30,35 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
-.titre__location {
-  flex-direction: column;
-  text-align: left;
+@media (max-width: 768px) {
+  .titre__host {
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+  }
 }
 
-.titre__location h2 {
+.titre__location__tag {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+  height: 90px;
+}
+@media (max-width: 768px) {
+  .titre__location__tag {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.titre__location__tag h2 {
   font-size: 36px;
   font-weight: 500;
-  height: 51px;
   margin: 0;
 }
 @media (max-width: 768px) {
-  .titre__location h2 {
+  .titre__location__tag h2 {
     font-size: 18px;
   }
 }
@@ -49,6 +70,27 @@
   color: black;
   font-size: 18px;
   margin: 0;
+}
+@media (max-width: 768px) {
+  .fiche__detaillee p {
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+.host__stars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .host__stars {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 60px;
+  }
 }
 
 .host__name {
@@ -63,11 +105,22 @@
   text-align: right;
   width: 50%;
 }
+@media (max-width: 768px) {
+  .host__name p {
+    font-size: 12px;
+  }
+}
 
 .host__name img {
   height: 64px;
   width: 64px;
   border-radius: 50px;
+}
+@media (max-width: 768px) {
+  .host__name img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .tags__rating {
@@ -93,9 +146,11 @@
 }
 @media (max-width: 768px) {
   .tags__rating .tags button {
+    font-size: 10px;
     max-width: 84px;
-    max-height: 18px;
+    line-height: 18px;
     padding: 2px 2px 2px 7px;
+    overflow: hidden;
   }
 }
 
@@ -108,14 +163,26 @@
 @media (max-width: 768px) {
   .description__equipements {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
 .description__equipements .collapse__title {
   font-size: 18px;
   padding-left: 10px;
 }
+@media (max-width: 768px) {
+  .description__equipements .collapse__title {
+    font-size: 12px;
+  }
+}
 .description__equipements .collapse__content {
   text-align: left;
+}
+@media (max-width: 768px) {
+  .description__equipements .collapse__content {
+    font-size: 12px;
+  }
 }
 
 .equipments__list {
@@ -134,6 +201,11 @@
 .star {
   margin-right: 10px;
   font-size: 24px;
+}
+@media (max-width: 768px) {
+  .star {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=FicheLogement.css.map */
