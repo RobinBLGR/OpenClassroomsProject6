@@ -12,7 +12,7 @@ function About() {
       <div className='banner__cards'>
         <Banner imageSRC={bannerAbout} />
       </div>
-      <div className='collapse__container'>
+      <div className='collapse__about'>
         {aboutList.map((item, index) => (
           <Collapse key={index} title={item.title} content={item.content} />
         ))}

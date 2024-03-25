@@ -1,3 +1,4 @@
+// Home.js
 import React, { useState, useEffect } from 'react';
 import '../styles/scss/style.css';
 import '../styles/scss/Home.css';
@@ -5,6 +6,7 @@ import Banner from './Banner';
 import bannerHome from '../assets/banner-home.png';
 import Card from './Card';
 import logementsData from '../datas/logements.json';
+import { Link } from 'react-router-dom';
 import FicheLogement from './FicheLogement';
 
 function Home() {
@@ -30,14 +32,13 @@ function Home() {
         <>
           <Banner imageSRC={bannerHome} text="Chez vous, partout et ailleurs" />
           <div className='cards'>
-            {logements.map((logement) => (
-              <Card
-                key={logement.id}
-                id={logement.id}
-                title={logement.title}
-                cover={logement.cover}
-                handleClickLogement={handleClickLogement}
-              />
+            {logementsData.map((logement) => (
+              <Link key={logement.id} to={`/fiche/${logement.id}`}>
+                <Card
+                  logement={logement}
+                  handleClickLogement={handleClickLogement}
+                />
+              </Link>
             ))}
           </div>
         </>

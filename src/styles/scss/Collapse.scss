@@ -12,6 +12,19 @@
       }
 }
 
+.collapse__about {
+  @include flex-center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    margin-top: 19px;
+    gap: 20px;
+    }
+}
+
 .collapse {
     @include flex-center;
     flex-direction: column;

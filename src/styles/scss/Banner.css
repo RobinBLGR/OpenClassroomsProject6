@@ -24,7 +24,7 @@
 
 .texte__banner {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 733px;
@@ -40,7 +40,7 @@
 }
 @media (max-width: 768px) {
   .texte__banner {
-    top: 80%;
+    top: 50%;
     left: 40%;
     font-size: 24px;
     width: 70%;

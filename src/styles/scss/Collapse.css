@@ -12,6 +12,21 @@
   }
 }
 
+.collapse__about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .collapse__about {
+    margin-top: 19px;
+    gap: 20px;
+  }
+}
+
 .collapse {
   display: flex;
   align-items: center;

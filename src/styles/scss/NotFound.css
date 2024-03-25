@@ -12,6 +12,7 @@ h2 {
   color: #FF6060;
   font-size: 288px;
   height: 150px;
+  margin-top: 60px;
 }
 @media (max-width: 768px) {
   h2 {
@@ -31,14 +32,13 @@ p {
   p {
     font-size: 18px;
     font-weight: 500;
-    width: 260px;
     text-align: center;
   }
 }
 
 .retour {
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 @media (max-width: 768px) {
   .retour {
