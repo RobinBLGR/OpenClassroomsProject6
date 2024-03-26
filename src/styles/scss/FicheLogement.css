@@ -7,12 +7,13 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: auto;
   margin-top: 50px;
   gap: 20px;
 }
 @media (max-width: 768px) {
   .fiche__detaillee {
-    margin-top: 30px;
+    margin-top: 25px;
     gap: 10px;
   }
 }
@@ -32,6 +33,7 @@ body {
 .titre__host {
   display: flex;
   justify-content: space-between;
+  height: auto;
 }
 @media (max-width: 768px) {
   .titre__host {
@@ -66,6 +68,7 @@ body {
 @media (max-width: 768px) {
   .titre__info h2 {
     font-size: 18px;
+    margin-bottom: -5px;
   }
 }
 .titre__info p {
@@ -136,6 +139,7 @@ body {
   height: 64px;
   width: 64px;
   border-radius: 50px;
+  padding-right: 10px;
 }
 @media (max-width: 768px) {
   .host__rating img {
@@ -147,6 +151,8 @@ body {
 .host__img {
   display: flex;
   gap: 20px;
+  width: 50%;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .host__img {
@@ -156,11 +162,15 @@ body {
   }
 }
 
+.stars {
+  padding-left: 30px;
+}
+
 .description__equipements {
   display: flex;
   align-items: flex-start;
   gap: 50px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 @media (max-width: 768px) {
   .description__equipements {
@@ -200,7 +210,7 @@ body {
 }
 
 .star-empty {
-  color: lightgray;
+  color: #E3E3E3;
 }
 
 .star {

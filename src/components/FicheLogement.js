@@ -42,7 +42,7 @@ function FicheLogement() {
               <p>{logement.host.name}</p>
               <img src={logement.host.picture} alt="Image de l'hôte" />
             </div>
-            <div>{stars}</div>
+            <div className='stars'>{stars}</div>
         </div>
       </div>
 

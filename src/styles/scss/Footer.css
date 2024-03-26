@@ -3,15 +3,17 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  max-width: 1440px;
+  width: 1440px;
   height: 209px;
   margin-top: 50px;
+  margin-left: -90px;
   background-color: black;
 }
 @media (max-width: 768px) {
   .footer {
     max-width: 375px;
-    margin-top: 22px;
+    margin-top: 25px;
+    margin-left: auto;
   }
 }
 

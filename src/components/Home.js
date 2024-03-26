@@ -11,10 +11,13 @@ import FicheLogement from './FicheLogement';
 
 function Home() {
   const [logementSelectionne, setLogementSelectionne] = useState(null);
-  const [logements, setLogements] = useState([]);
+  const [setLogements] = useState([]);
 
   useEffect(() => {
-    setLogements(logementsData);
+    fetch('http://localhost:3000/logements.json')
+      .then((response) => response.json())
+      .then((data) => setLogements(data))
+      .catch((error) => console.log(error));
   }, []);
 
   const handleClickLogement = (logementId) => {
