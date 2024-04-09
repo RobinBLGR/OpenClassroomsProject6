@@ -2,9 +2,9 @@ const Book = require('../models/book');
 const fs = require('fs');
 
 exports.createBook = (req, res, next) => {
-  const bookObject = JSON.parse(req.body.thing);
-  delete bookObject._id;
-  delete bookObject._userId;
+  const bookObject = JSON.parse(req.body.book);
+  delete bookObject.id;
+  delete bookObject.userId;
   const book = new Book({
       ...bookObject,
       userId: req.auth.userId,
@@ -68,3 +68,5 @@ exports.deleteBook = (req, res, next) => {
       .then(books => res.status(200).json(books))
       .catch(error => res.status(400).json({ error }));
   };
+
+  
