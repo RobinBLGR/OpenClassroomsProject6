@@ -69,4 +69,54 @@ exports.deleteBook = (req, res, next) => {
       .catch(error => res.status(400).json({ error }));
   };
 
+  exports.rateBook = (req, res, next) => {
+    const { userId, rating } = req.body;
+  
+    Book.findOne({ _id: req.params.id })
+      .then((book) => {
+        if (!book) {
+          return res.status(404).json({ message: 'Livre non trouvé.' });
+        }
+  
+        if (book.ratings.some((r) => r.userId.toString() === userId)) {
+          return res.status(400).json({ message: 'Vous avez déjà noté ce livre' });
+        }
+  
+        book.ratings.push({ userId, grade: rating });
+  
+        const averageRating = book.ratings.reduce((acc, curr) => acc + Number(curr.grade), 0) / book.ratings.length;
+        // Arrondir la moyenne au dixième supérieur
+        book.averageRating = Math.ceil(averageRating * 10) / 10;
+  
+        book.save()
+          .then(() => res.status(200).json(book))
+          .catch(error => res.status(500).json({ error }));
+      })
+      .catch(error => res.status(500).json({ error }));
+};
+
+
+  exports.getBestBooks = async (req, res, next) => {
+    try {
+      const bestBooks = await Book.find()
+        .sort({ rating: -1 }) // Trie les livres par ordre décroissant de la note
+        .limit(3); // Limite les résultats aux trois premiers livres
+  
+      res.status(200).json(bestBooks);
+    } catch (error) {
+      res.status(500).json({ error });
+    }
+  };
+
+  exports.getBestRatedBooks = (req, res, next) => {
+    Book.find()
+    .sort({ averageRating: -1 })
+    .limit(3)
+    .then((bestRatedBooks) => {
+        res.status(200).json(bestRatedBooks);
+    })
+    .catch((error) => {
+        res.status(500).json({ error: 'Internal Server Error'});
+    });
+}
   
