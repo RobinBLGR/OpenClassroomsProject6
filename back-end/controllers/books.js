@@ -39,22 +39,23 @@ exports.modifyBook = (req, res, next) => {
 };
 
 exports.deleteBook = (req, res, next) => {
-  Book.findOne({ _id: req.params.id})
-      .then(book => {
-          if (book.userId != req.auth.userId) {
-              res.status(401).json({message: 'Non autorisé'});
-          } else {
-              const filename = book.imageUrl.split('/images/')[1];
-              fs.unlink(`images/${filename}`, () => {
-                  Book.deleteOne({_id: req.params.id})
-                      .then(() => { res.status(200).json({message: 'Livre supprimé !'})})
-                      .catch(error => res.status(401).json({ error }));
-              });
-          }
-      })
-      .catch( error => {
-          res.status(500).json({ error });
+  Book.findOne({ _id: req.params.id, userId: req.auth.userId })
+    .then(book => {
+      const filename = book.imageUrl.split('/images/')[1];
+      const optimizedImagePath = `images/${filename.replace(/\.[^/.]+$/, '.webp')}`;
+
+      fs.unlink(optimizedImagePath, (unlinkErr) => {
+        if (unlinkErr) {
+          console.error(unlinkErr);
+          return res.status(500).json({ error: 'Une erreur s\'est produite lors de la suppression de l\'image optimisée' });
+        }
+
+        Book.deleteOne({ _id: req.params.id })
+          .then(() => res.status(200).json({ message: 'Livre supprimé !' }))
+          .catch(error => res.status(500).json({ error: 'Une erreur s\'est produite lors de la suppression du livre' }));
       });
+    })
+    .catch(error => res.status(404).json({ error: 'Livre non trouvé' }));
 };
 
   exports.getOneBook = (req, res, next) => {

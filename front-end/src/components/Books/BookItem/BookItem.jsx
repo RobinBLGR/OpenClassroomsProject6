@@ -17,10 +17,14 @@ function BookItem({ book, size }) {
       title = <h2>{book.title}</h2>;
       break;
   }
+
+  // Construction de l'URL de l'image optimisée au format WebP
+  const optimizedImageUrl = book.imageUrl.replace(/(\.[^/.]+)$/, '.webp');
+
   return (
     <Link to={`/livre/${book.id}`} className={styles.BookItem}>
       <article>
-        <img className={styles.BookImage} src={book.imageUrl} alt={`${book.title}, ${book.author} - ${book.year}`} />
+        <img className={styles.BookImage} src={optimizedImageUrl} alt={`${book.title}, ${book.author} - ${book.year}`} />
         <div className={styles.BookInfo}>
           <div className={styles.Rating}>
             {displayStars(book.averageRating)}
@@ -52,4 +56,5 @@ BookItem.propTypes = {
     averageRating: PropTypes.number,
   }).isRequired,
 };
+
 export default BookItem;
