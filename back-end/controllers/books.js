@@ -22,27 +22,37 @@ exports.modifyBook = (req, res, next) => {
       imageUrl: `${req.protocol}://${req.get('host')}/${req.file.path}`
   } : { ...req.body };
 
-  delete bookObject._userId;
-  Book.findOne({_id: req.params.id})
+  delete bookObject._userId; // Si cette suppression est intentionnelle et ne cause pas de problèmes ailleurs dans votre application
+
+  Book.findOne({ _id: req.params.id })
       .then((book) => {
-        const filename = book.imageUrl.split('/images/')[1];
-          if (book.userId != req.auth.userId) {
-              res.status(401).json({ message : 'Non autorisé'});
-          } else {
-              Book.updateOne({ _id: req.params.id}, { ...bookObject, _id: req.params.id})
-              .then(() => {
-                if (req.file) {
-                  return fs.unlink(filename)
-                }
-              })
-              .then(() => res.status(200).json({message : 'Livre modifié !'}))
-              .catch(error => res.status(401).json({ error }));
-          }
+        if (!book) {
+          return res.status(404).json({ message: 'Livre non trouvé' });
+        }
+        if (book.userId !== req.auth.userId) {
+          return res.status(403).json({ message: 'Non autorisé' }); // Utilisation de 403 Forbidden pour les erreurs d'autorisation
+        }
+        
+        // Suppression de l'ancienne image uniquement si une nouvelle image est téléchargée
+        if (req.file && book.imageUrl) {
+          const filename = book.imageUrl.split('/images/')[1];
+          fs.unlink(`images/${filename}`, (err) => {
+            if (err) {
+              console.error('Erreur lors de la suppression de l\'ancienne image :', err);
+            }
+          });
+        }
+
+        return Book.updateOne({ _id: req.params.id }, { ...bookObject, _id: req.params.id })
+          .then(() => res.status(200).json({ message: 'Livre modifié !' }))
+          .catch(error => res.status(500).json({ message: 'Une erreur est survenue lors de la modification du livre' }));
       })
       .catch((error) => {
-          res.status(400).json({ error });
+          res.status(500).json({ message: 'Une erreur est survenue lors de la recherche du livre' });
       });
 };
+
+
 
 exports.deleteBook = (req, res, next) => {
   Book.findOne({ _id: req.params.id})
