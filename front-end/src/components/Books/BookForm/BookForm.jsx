@@ -43,6 +43,13 @@ function BookForm({ book, validate }) {
     }
   }, [formState]);
 
+  const optimizedImageUrl = useMemo(() => {
+    if (book && book.imageUrl) {
+      return book.imageUrl.replace(/(\.[^/.]+)$/, '.webp');
+    }
+    return null;
+  }, [book]);
+
   const onSubmit = async (data) => {
     // When we create a new book
     if (!book) {
@@ -99,9 +106,9 @@ function BookForm({ book, validate }) {
       <label htmlFor="file">
         <p>Visuel</p>
         <div className={styles.AddImage}>
-          {filePreview || book?.imageUrl ? (
+          {filePreview || optimizedImageUrl || book?.imageUrl ? (
             <>
-              <img src={filePreview ?? book?.imageUrl} alt="preview" />
+              <img src={filePreview ?? optimizedImageUrl ?? book?.imageUrl} alt="preview" />
               <p>Modifier</p>
             </>
           ) : (
@@ -110,7 +117,6 @@ function BookForm({ book, validate }) {
               <p>Ajouter une image</p>
             </>
           )}
-
         </div>
         <input {...register('file')} type="file" id="file" />
       </label>
@@ -142,4 +148,5 @@ BookForm.defaultProps = {
   book: null,
   validate: null,
 };
+
 export default BookForm;

@@ -1,3 +1,4 @@
+
 /* eslint-disable react/jsx-props-no-spreading */
 
 import React, { useEffect, useState } from 'react';
@@ -66,8 +67,8 @@ function Book() {
   const bookContent = !loading && !book.delete ? (
     <div>
       <div className={styles.Book}>
-      <div className={styles.BookImage} style={{ backgroundImage: `url("${book.imageUrl.replace(/\.jpg$/, '')}.webp")` }} />
-              <div className={styles.BookContent}>
+        <div className={styles.BookImage} style={{ backgroundImage: `url("${book.imageUrl}")` }} />
+        <div className={styles.BookContent}>
           {book?.userId === connectedUser?.userId ? (
             <div className={styles.Owner}>
               <p>Vous avez publié cet ouvrage, vous pouvez le :</p>
