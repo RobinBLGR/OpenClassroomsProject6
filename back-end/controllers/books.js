@@ -43,8 +43,6 @@ exports.modifyBook = (req, res, next) => {
     .catch(() => res.status(500).json({ message: 'Erreur lors de la recherche du livre' }));
 };
 
-
-
 exports.deleteBook = (req, res, next) => {
   Book.findOne({ _id: req.params.id})
       .then(book => {
@@ -92,7 +90,6 @@ exports.deleteBook = (req, res, next) => {
         book.ratings.push({ userId, grade: rating });
   
         const averageRating = book.ratings.reduce((acc, curr) => acc + Number(curr.grade), 0) / book.ratings.length;
-        // Arrondir la moyenne au dixième supérieur
         book.averageRating = Math.ceil(averageRating * 10) / 10;
   
         book.save()
@@ -101,19 +98,6 @@ exports.deleteBook = (req, res, next) => {
       })
       .catch(error => res.status(500).json({ error }));
 };
-
-
-  exports.getBestBooks = async (req, res, next) => {
-    try {
-      const bestBooks = await Book.find()
-        .sort({ rating: -1 }) 
-        .limit(3);
-  
-      res.status(200).json(bestBooks);
-    } catch (error) {
-      res.status(500).json({ error });
-    }
-  };
 
   exports.getBestRatedBooks = (req, res, next) => {
     Book.find()
