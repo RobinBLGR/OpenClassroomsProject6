@@ -103,8 +103,8 @@ exports.deleteBook = (req, res, next) => {
     Book.find()
     .sort({ "ratings.grade": -1 })
     .limit(3)
-    .then((bestRatedBooks) => {
-        res.status(200).json(bestRatedBooks);
+    .then((getBestRatedBooks) => {
+        res.status(200).json(getBestRatedBooks);
     })
     .catch((error) => {
         res.status(500).json({ error: 'Internal Server Error'});
