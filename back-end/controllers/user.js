@@ -1,12 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const crypto = require('crypto');
 
-const User = require('../models/user');
-
-const generateSecret = () => {
-    return crypto.randomBytes(32).toString('hex');
-};
+const User = require('../models/user')
 
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
@@ -20,9 +15,9 @@ exports.signup = (req, res, next) => {
           .catch(error => res.status(400).json({ error }));
       })
       .catch(error => res.status(500).json({ error }));
-};
+  };
 
-exports.login = (req, res, next) => {
+  exports.login = (req, res, next) => {
     User.findOne({ email: req.body.email })
         .then(user => {
             if (!user) {
@@ -33,12 +28,11 @@ exports.login = (req, res, next) => {
                     if (!valid) {
                         return res.status(401).json({ message: 'Paire login/mot de passe incorrecte' });
                     }
-                    const secret = generateSecret(); 
                     res.status(200).json({
                         userId: user._id,
                         token: jwt.sign(
                             { userId: user._id },
-                            secret, 
+                            'RANDOM_TOKEN_SECRET',
                             { expiresIn: '24h'}
                         )
                     });
@@ -46,4 +40,4 @@ exports.login = (req, res, next) => {
                 .catch(error => res.status(500).json({ error }));
         })
         .catch(error => res.status(500).json({ error }));
-};
+ };
