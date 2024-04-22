@@ -1,13 +1,17 @@
-require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const app = express();
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const booksRoutes = require('./routes/books');
 const userRoutes = require('./routes/user');
 
-mongoose.connect(`mongodb+srv://testvieuxgrimoire:${process.env.MONGODB_PASSWORD}@vieuxgrimoire.wcghary.mongodb.net/?retryWrites=true&w=majority&appName=VieuxGrimoire`)
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
